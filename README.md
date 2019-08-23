@@ -8,3 +8,5 @@ NDK [issue 1028](https://github.com/android-ndk/ndk/issues/1028) documents the p
 This project reproduces the problem by having a libFoo and libBar that are called into
 with JNI.  In the app gui, tap on the "FOO" or "BAR" buttons.
 
+As a workaround, set "ENV" to 1, which sets "KMP_DUPLICATE_LIB_OK".
+
