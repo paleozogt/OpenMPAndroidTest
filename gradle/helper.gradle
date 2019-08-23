@@ -1,0 +1,9 @@
+
+ext.loadKeystoreProps = {
+    def keystore_dir= System.getenv()["KEYSTORE"]
+    if (keystore_dir == null) return [:]
+
+    def props= propFileLoader.load(new File(keystore_dir, "keystore.properties"), [:])
+    props["key.store"]= new File(keystore_dir, props['key.store'])
+    return props
+}
